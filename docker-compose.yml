@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+  mysql:
+    build: .
+    restart: always
+    environment:
+      LANG: "ja_JP.UTF-8"
+      LANGUAGE: "ja_JP:en"
+      TZ: "Asia/Tokyo"
+      MYSQL_DATABASE: "mysql"
+      MYSQL_USER: "user"
+      MYSQL_PASSWORD: "password"
+      MYSQL_ROOT_PASSWORD: "password"
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql
